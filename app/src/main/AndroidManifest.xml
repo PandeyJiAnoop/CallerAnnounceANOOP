@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="in.anoop.callerannounce">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="in.anoop.callerannounce.MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="in.anoop.callerannounce.PhoneCallStatesService"
+            android:stopWithTask="true" android:exported="true"/>
+
+        <activity
+            android:name="in.anoop.callerannounce.SettingsActivity"
+            android:label="@string/title_activity_settings" android:exported="true"
+            android:parentActivityName ="in.anoop.callerannounce.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="in.anoop.callerannounce.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
